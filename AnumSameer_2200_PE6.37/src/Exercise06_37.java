@@ -1,35 +1,40 @@
 /***************************************************************
  * 
  * @author Anum Sameer
- * Date: 11/11/2022 [F] 
+ * Date: 11/09/2022 [W] 
  * 
  ***************************************************************/
 import java.util.Scanner;
-public class Exercise06_37 {
+public class Exercise06_23 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.print("Enter an integer: ");
-		int number = input.nextInt();
-		System.out.print("Enter the width: ");
-		int width = input.nextInt();
+		System.out.print("Enter a string: ");
+		String s = input.nextLine();
+	
 		
-		System.out.println("The formated number is " + format(number,width));
-	
+		System.out.print("Enter a chacter: ");
+		char c = input.nextLine().charAt(0);	
+		
+		int count = count(s,c);
+		System.out.println("The number of occurrences of " +
+				c + " in " + s + " is " + count);
 		input.close();
+		
 	}
+    public static int count(String str, char ch) {
+    	int count = 0;
+    	for( int i = 0;i < str.length(); i ++ ) {
+    		if( str.charAt (i) == ch ) {
+    				count++;
+    			
+    		}
+    
+    	}
+return count;    
+    
+    
+    }
+    
+    
 	
-	public static String format(int n, int w) {
-		String result = n + "";
-		int len = w - result.length();
-		for(int i = 0; i < len ; i++) {
-			result = "0" + result;
-		}
-		return result;
-	}
 }
-
-
-
-
-
-
