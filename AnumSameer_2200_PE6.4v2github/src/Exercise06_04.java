@@ -1,7 +1,7 @@
 /***************************************************************
  * 
  * @author Anum Sameer
- * Date: 11/14/2022 [M]
+ * Date: 11/16/2022 [W]
  * 
  ***************************************************************/
 import java.util.Scanner;
@@ -13,15 +13,23 @@ public class Exercise06_04 {
 		reverse(number);
 		input.close();
 	}
-
 	public static void reverse(int n) {
 		if( n == 0) {
-			System.out.print(n);
+			System.out.println(n);
 		}
-		while(n!= 0) {
-			System.out.print(n % 10);
-			n = n / 10;
-		}
+		while( n != 0) {
+			if ( n < 0 ) {
+				System.out.print(n % 10);
+				n = n * -1;
+				n = n /10;
+			}
+			else {
+				System.out.print(n % 10);
+				n = n / 10;
+			}
+			
+	}
+		
 	}
 
 }
